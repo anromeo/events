@@ -6,35 +6,37 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container text-center">
-		<h1>Prototype Event Search</h1>
-	    <p>
-	    	This application implements a Spring Restful webservice to consume EventBrite's restful webservice.
-	    	View this project <a href="https://github.com/anromeo/events">here</a>.
-	    </p>
-	    <table style="margin:auto;">
-	    	<tr>
-	    		<td>
-	    			<strong>Search</strong>
-	    		</td>
-	    		<td>
-	    			<input type="text" id="search" class="form-control"/>
-	    		</td>
-	    	</tr>
-	    	<tr>
-	    		<td>
-	    			<strong>Zipcode</strong>
-	    		</td>
-	    		<td>
-	    			<input type="text" id="zipcode" class="form-control" />
-	    		</td>
-	    	</tr>
-	    	<tr>
-	    		<td colspan="2">
-	    			<button id="go" class="btn btn-default pull-right">Find Now</button>
-	    		</td>
-	    	</tr>
-	    </table>
+	<div class="container">
+		<div class="text-center">
+			<h1>Prototype Event Search</h1>
+		    <p>
+		    	This application implements a Spring Restful webservice to consume EventBrite's restful webservice.
+		    	View this project <a href="https://github.com/anromeo/events">here</a>.
+		    </p>
+		    <table style="margin:auto;">
+		    	<tr>
+		    		<td>
+		    			<strong>Search</strong>
+		    		</td>
+		    		<td>
+		    			<input type="text" id="search" class="form-control"/>
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td>
+		    			<strong>Zipcode</strong>
+		    		</td>
+		    		<td>
+		    			<input type="text" id="zipcode" class="form-control" />
+		    		</td>
+		    	</tr>
+		    	<tr>
+		    		<td colspan="2">
+		    			<button id="go" class="btn btn-default pull-right">Find Now</button>
+		    		</td>
+		    	</tr>
+		    </table>
+		</div>
 	    <div>
 	    	<img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif" id="loader" style="display:none;"/>
 	    	<table id="results"></table>
@@ -57,7 +59,7 @@
 		            type: 'get',
 		            success: function (data) {
 		            	$.each(data, function(index, value) {
-		            		resultsTable.append("<tr><td><p><a href='" + value.url + "'>" + value.title + "</a></p>" + value.description + "</td></tr>");
+		            		resultsTable.append("<tr><td><h2><a href='" + value.url + "'>" + value.title + "</a></h2><p>" + value.description + "</p></td></tr>");
 		            	});
 		            	loader.hide();
                     },
