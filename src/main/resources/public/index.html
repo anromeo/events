@@ -51,6 +51,7 @@
 				var search = $("#search").val();
 				var url = "/events?q=" + search + "&zipcode=" + zip;
 				var resultsTable = $("#results");
+				resultsTable.html("");
 				var loader = $("#loader");
 				loader.show();
 				$.ajax({
